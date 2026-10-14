@@ -8,15 +8,17 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="VLSM Planner">
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="VLSM Planner">
 <meta name="description" content="Subnet & VLSM Planner — Pro Network Design Console. IPv4 VLSM, routing protocols, Cisco IOS config generator.">
 
-<!-- ========== APP ICON (Favicon + Apple touch + PWA) ========== -->
+<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D1316'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%235FD9AA' stroke-width='3.5'/%3E%3Ctext x='32' y='41' font-family='monospace' font-size='22' font-weight='700' fill='%235FD9AA' text-anchor='middle'%3E/V%3C/text%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%230D1316'/%3E%3Ccircle cx='90' cy='90' r='54' fill='none' stroke='%235FD9AA' stroke-width='10'/%3E%3Ctext x='90' y='114' font-family='monospace' font-size='62' font-weight='700' fill='%235FD9AA' text-anchor='middle'%3E/V%3C/text%3E%3C/svg%3E">
-<link rel="mask-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D1316'/%3E%3Ctext x='32' y='41' font-family='monospace' font-size='22' font-weight='700' fill='%235FD9AA' text-anchor='middle'%3E/V%3C/text%3E%3C/svg%3E" color="#5FD9AA">
 
-<!-- ========== PWA MANIFEST (inline, no install prompt) ========== -->
-<link rel="manifest" href='data:application/manifest+json,{"name":"Subnet %26 VLSM Planner %C2%B7 Pro","short_name":"VLSM Planner","description":"Pro Network Design Console %E2%80%94 IPv4 VLSM, routing, Cisco IOS","start_url":"./","scope":"./","display":"standalone","orientation":"portrait-primary","background_color":"%230D1316","theme_color":"%230D1316","icons":[{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 192 192%27%3E%3Crect width%3D%27192%27 height%3D%27192%27 rx%3D%2744%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%2796%27 cy%3D%2796%27 r%3D%2757%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2710%27%2F%3E%3Ctext x%3D%2796%27 y%3D%27120%27 font-family%3D%27monospace%27 font-size%3D%2768%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"192x192","type":"image/svg+xml","purpose":"any"},{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 192 192%27%3E%3Crect width%3D%27192%27 height%3D%27192%27 rx%3D%2744%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%2796%27 cy%3D%2796%27 r%3D%2780%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2714%27%2F%3E%3Ctext x%3D%2796%27 y%3D%27124%27 font-family%3D%27monospace%27 font-size%3D%2796%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"192x192","type":"image/svg+xml","purpose":"maskable"},{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 512 512%27%3E%3Crect width%3D%27512%27 height%3D%27512%27 rx%3D%27116%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%27256%27 cy%3D%27256%27 r%3D%27152%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2728%27%2F%3E%3Ctext x%3D%27256%27 y%3D%27322%27 font-family%3D%27monospace%27 font-size%3D%27180%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"512x512","type":"image/svg+xml","purpose":"any"},{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 512 512%27%3E%3Crect width%3D%27512%27 height%3D%27512%27 rx%3D%27116%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%27256%27 cy%3D%27256%27 r%3D%27170%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2736%27%2F%3E%3Ctext x%3D%27256%27 y%3D%27332%27 font-family%3D%27monospace%27 font-size%3D%27200%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"512x512","type":"image/svg+xml","purpose":"maskable"}]}'>
+<!-- Apple Touch Icon (iPhone/iPad home screen) -->
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%230D1316'/%3E%3Ccircle cx='90' cy='90' r='58' fill='none' stroke='%235FD9AA' stroke-width='11'/%3E%3Ctext x='90' y='115' font-family='monospace' font-size='66' font-weight='700' fill='%235FD9AA' text-anchor='middle'%3E/V%3C/text%3E%3C/svg%3E">
+
+<!-- ========== PWA MANIFEST (proper, with icons) ========== -->
+<link rel="manifest" href='data:application/manifest+json,{"id":"vlsm-planner-pro","name":"Subnet %26 VLSM Planner %C2%B7 Pro","short_name":"VLSM Planner","description":"Pro Network Design Console %E2%80%94 IPv4 VLSM, routing protocols, Cisco IOS config generator.","start_url":"./","scope":"./","display":"standalone","display_override":["standalone","minimal-ui"],"orientation":"any","background_color":"%230D1316","theme_color":"%230D1316","lang":"en","dir":"ltr","categories":["productivity","utilities","developer"],"icons":[{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 192 192%27%3E%3Crect width%3D%27192%27 height%3D%27192%27 rx%3D%2742%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%2796%27 cy%3D%2796%27 r%3D%2762%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2712%27%2F%3E%3Ctext x%3D%2796%27 y%3D%27121%27 font-family%3D%27monospace%27 font-size%3D%2770%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"192x192","type":"image/svg+xml","purpose":"any"},{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 512 512%27%3E%3Crect width%3D%27512%27 height%3D%27512%27 rx%3D%27112%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%27256%27 cy%3D%27256%27 r%3D%27165%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2732%27%2F%3E%3Ctext x%3D%27256%27 y%3D%27322%27 font-family%3D%27monospace%27 font-size%3D%27188%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"512x512","type":"image/svg+xml","purpose":"any"},{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 512 512%27%3E%3Crect width%3D%27512%27 height%3D%27512%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%27256%27 cy%3D%27256%27 r%3D%27140%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2730%27%2F%3E%3Ctext x%3D%27256%27 y%3D%27320%27 font-family%3D%27monospace%27 font-size%3D%27160%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"512x512","type":"image/svg+xml","purpose":"maskable"}]}'>
 
 <title>Subnet &amp; VLSM Planner — Pro Network Design Console</title>
 <style>
@@ -55,6 +57,27 @@
   .live-badge{display:inline-block;background:rgba(95,217,170,0.12);
     border:1px solid rgba(95,217,170,0.3); color:var(--signal); font-size:10px;
     padding:1px 8px; border-radius:12px; margin-left:6px; letter-spacing:0.4px;}
+
+  /* ===== INSTALL APP BUTTON ===== */
+  .install-btn{
+    display:none;
+    align-items:center; gap:6px;
+    background: linear-gradient(135deg, #5FD9AA, #3A8C6D);
+    color:#08201A; border:none; padding:8px 14px;
+    border-radius:20px; font-family:var(--sans); font-size:12px; font-weight:600;
+    cursor:pointer; box-shadow:0 4px 14px rgba(95,217,170,0.35);
+    transition: transform .15s, box-shadow .15s;
+    white-space:nowrap;
+  }
+  .install-btn.show{ display:inline-flex; }
+  .install-btn:hover{ transform:translateY(-1px); box-shadow:0 6px 18px rgba(95,217,170,0.5); }
+  .install-btn:active{ transform:scale(0.96); }
+  .install-btn svg{ width:14px; height:14px; }
+  @media (max-width:480px){
+    .install-btn{ padding:7px 11px; font-size:11px; }
+    .install-btn .txt{ display:none; }
+    .install-btn svg{ width:16px; height:16px; }
+  }
 
   .shell{display:grid; grid-template-columns:400px 1fr; min-height:calc(100vh - 78px);}
   @media (max-width:1080px){.shell{grid-template-columns:1fr;}}
@@ -300,20 +323,45 @@
     box-shadow:0 8px 30px rgba(0,0,0,0.5);
   }
   .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ===== Install helper banner for iOS (no native prompt) ===== */
+  .ios-install-banner{
+    display:none;
+    position:fixed; left:12px; right:12px; bottom:calc(12px + var(--safe-bottom));
+    background: linear-gradient(135deg, #182229, #131B20);
+    border:1px solid var(--signal-dim); border-radius:12px;
+    padding:12px 14px; z-index:150;
+    box-shadow:0 8px 30px rgba(0,0,0,0.6);
+    font-size:12px; color:var(--text); font-family:var(--sans);
+    align-items:center; gap:10px;
+  }
+  .ios-install-banner.show{ display:flex; }
+  .ios-install-banner svg{ flex:0 0 auto; width:22px; height:22px; color:var(--signal); }
+  .ios-install-banner .txt{ flex:1; line-height:1.4; }
+  .ios-install-banner .close{
+    background:none; border:none; color:var(--text-dim); font-size:18px;
+    cursor:pointer; padding:4px 6px; line-height:1;
+  }
+  .ios-install-banner b{ color:var(--signal); }
 </style>
 </head>
 <body>
 
 <header>
-  <div>
+  <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; flex:1; min-width:0;">
     <div class="brand">
       <span class="mark"></span>
       <h1>Subnet &amp; VLSM Planner · Pro</h1>
       <span class="live-badge">LIVE</span>
     </div>
-    <div class="tag">IPv4 · VLSM · Routing (RIP/OSPF/EIGRP/BGP) · Switching (VTP/STP/DTP) · Cisco IOS</div>
+    <button class="install-btn" id="installBtn" title="Install app">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/>
+      </svg>
+      <span class="txt">Install App</span>
+    </button>
   </div>
-  <div class="headline-sub">Base network, requirements, routing protocol aur switching options — sab kuch edit karo, saare tabs realtime update ho jaate hain.</div>
+  <div class="tag">IPv4 · VLSM · Routing (RIP/OSPF/EIGRP/BGP) · Switching (VTP/STP/DTP) · Cisco IOS</div>
 </header>
 
 <!-- Mobile drawer backdrop -->
@@ -503,6 +551,15 @@
 
 <!-- Toast -->
 <div class="toast" id="toast"></div>
+
+<!-- iOS install helper banner -->
+<div class="ios-install-banner" id="iosBanner">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/>
+  </svg>
+  <div class="txt">Install karne ke liye: <b>Share</b> button dabao → <b>Add to Home Screen</b> chuno.</div>
+  <button class="close" id="iosBannerClose" aria-label="close">✕</button>
+</div>
 
 <script>
 /* ============================================================
@@ -1464,16 +1521,107 @@ function showToast(msg){
   t.textContent = msg;
   t.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(()=>t.classList.remove('show'), 2200);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 2400);
 }
 
 /* ============================================================
-   PWA — Service Worker registration (NO INSTALL PROMPT)
+   PWA INSTALL — proper implementation
+   ============================================================
+   Behavior:
+   - On desktop Chrome/Edge: install button appears in header,
+     click → native install prompt
+   - On Android Chrome: install button appears, click → native prompt
+     (also `beforeinstallprompt` fires, we capture it)
+   - On iOS Safari: no native prompt available → show a helper banner
+     telling user to use Share → Add to Home Screen
+   - App detects if already installed (standalone mode) → hide button
+   ============================================================ */
+
+const installBtn = document.getElementById('installBtn');
+const iosBanner = document.getElementById('iosBanner');
+let deferredInstallPrompt = null;
+
+// Detect standalone mode (already installed/opened as app)
+function isStandalone(){
+  return window.matchMedia('(display-mode: standalone)').matches
+      || window.matchMedia('(display-mode: minimal-ui)').matches
+      || window.navigator.standalone === true;
+}
+
+// Detect iOS Safari (no beforeinstallprompt support)
+function isIOSSafari(){
+  const ua = window.navigator.userAgent;
+  const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+  const isSafari = /Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS/.test(ua);
+  return isIOS && isSafari;
+}
+
+// Capture the install prompt (Chrome/Edge/Android)
+window.addEventListener('beforeinstallprompt', (e)=>{
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  if(!isStandalone()){
+    installBtn.classList.add('show');
+  }
+});
+
+// Hide install UI when app is installed
+window.addEventListener('appinstalled', ()=>{
+  installBtn.classList.remove('show');
+  iosBanner.classList.remove('show');
+  deferredInstallPrompt = null;
+  showToast('✅ VLSM Planner installed');
+});
+
+// Install button click
+installBtn.addEventListener('click', async ()=>{
+  if(!deferredInstallPrompt){
+    // Fallback — show platform-specific instructions
+    if(isIOSSafari()){
+      iosBanner.classList.add('show');
+    } else {
+      showToast('Browser menu → Install app / Add to Home Screen');
+    }
+    return;
+  }
+  deferredInstallPrompt.prompt();
+  const choice = await deferredInstallPrompt.userChoice;
+  if(choice.outcome === 'accepted'){
+    showToast('✅ Install accepted');
+  } else {
+    showToast('Install dismissed');
+  }
+  deferredInstallPrompt = null;
+  installBtn.classList.remove('show');
+});
+
+// iOS — show helper banner (auto + button)
+if(isIOSSafari() && !isStandalone()){
+  installBtn.classList.add('show');
+  // Auto-show after short delay, but user can dismiss
+  setTimeout(()=>{
+    if(!localStorage.getItem('iosBannerDismissed')){
+      iosBanner.classList.add('show');
+    }
+  }, 3500);
+}
+document.getElementById('iosBannerClose').addEventListener('click', ()=>{
+  iosBanner.classList.remove('show');
+  try{ localStorage.setItem('iosBannerDismissed','1'); }catch(e){}
+});
+
+// If already installed → make sure button hidden
+if(isStandalone()){
+  installBtn.classList.remove('show');
+}
+
+/* ============================================================
+   Service Worker — offline caching
    ============================================================ */
 if('serviceWorker' in navigator){
   window.addEventListener('load', ()=>{
     const swCode = `
-      const CACHE = 'vlsm-planner-v1';
+      const CACHE = 'vlsm-planner-v2';
       self.addEventListener('install', (e)=>{
         self.skipWaiting();
       });
@@ -1481,6 +1629,7 @@ if('serviceWorker' in navigator){
         e.waitUntil(self.clients.claim());
       });
       self.addEventListener('fetch', (e)=>{
+        if(e.request.method !== 'GET') return;
         e.respondWith(
           fetch(e.request).then((res)=>{
             const copy = res.clone();
@@ -1497,12 +1646,6 @@ if('serviceWorker' in navigator){
 }
 
 /* ============================================================
-   NOTE: `beforeinstallprompt` is intentionally NOT captured or
-   triggered. The app can still be installed via browser menu
-   ("Add to Home Screen") but no automatic pop-up will appear.
-   ============================================================ */
-
-/* ============================================================
    Init
    ============================================================ */
 document.getElementById('generateBtn').addEventListener('click', ()=>{
@@ -1514,8 +1657,8 @@ document.getElementById('generateBtn').addEventListener('click', ()=>{
 });
 regenerateAll();
 
-if(window.matchMedia('(max-width:768px)').matches){
-  setTimeout(()=>showToast('👆 FAB se controls kholo · tabs swipe karo'), 1200);
+if(window.matchMedia('(max-width:768px)').matches && !isStandalone()){
+  setTimeout(()=>showToast('👆 FAB se controls kholo · top-right install button dabao'), 1500);
 }
 </script>
 </body>
