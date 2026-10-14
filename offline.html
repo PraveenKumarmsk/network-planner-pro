@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0D1316">
+<title>Offline — VLSM Planner</title>
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;}
+  body{
+    background: radial-gradient(circle at 15% 0%, rgba(95,217,170,0.05), transparent 40%), #0D1316;
+    color:#E7EEF1; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    display:flex; align-items:center; justify-content:center; padding:24px;
+    min-height:100vh; min-height:100dvh;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .card{
+    max-width:420px; width:100%; text-align:center;
+    background:#131B20; border:1px solid #26343C; border-radius:16px;
+    padding:32px 24px; box-shadow:0 12px 40px rgba(0,0,0,0.5);
+  }
+  .icon{
+    width:72px; height:72px; margin:0 auto 18px;
+    border-radius:50%; background:rgba(95,217,170,0.1);
+    border:2px solid #5FD9AA;
+    display:flex; align-items:center; justify-content:center;
+    font-size:32px;
+  }
+  h1{
+    font-size:20px; margin:0 0 8px; font-weight:600;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    color:#5FD9AA;
+  }
+  p{
+    color:#8FA3AC; font-size:13.5px; line-height:1.6; margin:0 0 20px;
+  }
+  .btn{
+    display:inline-block; background:#5FD9AA; color:#08201A;
+    border:none; padding:11px 22px; border-radius:8px;
+    font-weight:600; font-size:14px; cursor:pointer;
+    text-decoration:none; font-family:inherit;
+  }
+  .btn:active{ transform:translateY(1px); }
+  .meta{
+    margin-top:20px; padding-top:16px; border-top:1px solid #1D2830;
+    font-size:11px; color:#5C6E76; font-family: ui-monospace, monospace;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">📡</div>
+    <h1>You're Offline</h1>
+    <p>VLSM Planner needs internet connection the first time. Once cached, it works offline too.</p>
+    <button class="btn" onclick="location.reload()">Retry</button>
+    <div class="meta">VLSM Planner · Pro Network Design Console</div>
+  </div>
+  <script>
+    // Auto-retry when connection comes back
+    window.addEventListener('online', () => location.reload());
+  </script>
+</body>
+</html>

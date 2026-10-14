@@ -1,0 +1,47 @@
+{
+  "name": "Subnet & VLSM Planner · Pro",
+  "short_name": "VLSM Planner",
+  "description": "Pro Network Design Console — IPv4 VLSM, routing protocols (OSPF/EIGRP/RIP/BGP), Cisco IOS config generator.",
+  "start_url": "index.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#0D1316",
+  "theme_color": "#0D1316",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["productivity", "utilities", "developer", "education"],
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any"}
+  ],
+  "shortcuts": [
+    {
+      "name": "IP Plan",
+      "short_name": "Plan",
+      "url": "index.html?tab=plan",
+      "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Cisco Config",
+      "short_name": "Config",
+      "url": "index.html?tab=cmds",
+      "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Subnet Calculator",
+      "short_name": "Calc",
+      "url": "index.html?tab=calc",
+      "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Topology",
+      "short_name": "Topology",
+      "url": "index.html?tab=topo",
+      "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]
+    }
+  ]
+}
