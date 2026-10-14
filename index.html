@@ -2,7 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0D1316">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VLSM Planner">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Subnet & VLSM Planner — Pro Network Design Console. IPv4 VLSM, routing protocols, Cisco IOS config generator.">
+
+<!-- ========== APP ICON (Favicon + Apple touch + PWA) ========== -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D1316'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%235FD9AA' stroke-width='3.5'/%3E%3Ctext x='32' y='41' font-family='monospace' font-size='22' font-weight='700' fill='%235FD9AA' text-anchor='middle'%3E/V%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%230D1316'/%3E%3Ccircle cx='90' cy='90' r='54' fill='none' stroke='%235FD9AA' stroke-width='10'/%3E%3Ctext x='90' y='114' font-family='monospace' font-size='62' font-weight='700' fill='%235FD9AA' text-anchor='middle'%3E/V%3C/text%3E%3C/svg%3E">
+<link rel="mask-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D1316'/%3E%3Ctext x='32' y='41' font-family='monospace' font-size='22' font-weight='700' fill='%235FD9AA' text-anchor='middle'%3E/V%3C/text%3E%3C/svg%3E" color="#5FD9AA">
+
+<!-- ========== PWA MANIFEST (inline, no install prompt) ========== -->
+<link rel="manifest" href='data:application/manifest+json,{"name":"Subnet %26 VLSM Planner %C2%B7 Pro","short_name":"VLSM Planner","description":"Pro Network Design Console %E2%80%94 IPv4 VLSM, routing, Cisco IOS","start_url":"./","scope":"./","display":"standalone","orientation":"portrait-primary","background_color":"%230D1316","theme_color":"%230D1316","icons":[{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 192 192%27%3E%3Crect width%3D%27192%27 height%3D%27192%27 rx%3D%2744%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%2796%27 cy%3D%2796%27 r%3D%2757%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2710%27%2F%3E%3Ctext x%3D%2796%27 y%3D%27120%27 font-family%3D%27monospace%27 font-size%3D%2768%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"192x192","type":"image/svg+xml","purpose":"any"},{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 192 192%27%3E%3Crect width%3D%27192%27 height%3D%27192%27 rx%3D%2744%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%2796%27 cy%3D%2796%27 r%3D%2780%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2714%27%2F%3E%3Ctext x%3D%2796%27 y%3D%27124%27 font-family%3D%27monospace%27 font-size%3D%2796%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"192x192","type":"image/svg+xml","purpose":"maskable"},{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 512 512%27%3E%3Crect width%3D%27512%27 height%3D%27512%27 rx%3D%27116%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%27256%27 cy%3D%27256%27 r%3D%27152%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2728%27%2F%3E%3Ctext x%3D%27256%27 y%3D%27322%27 font-family%3D%27monospace%27 font-size%3D%27180%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"512x512","type":"image/svg+xml","purpose":"any"},{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 512 512%27%3E%3Crect width%3D%27512%27 height%3D%27512%27 rx%3D%27116%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%27256%27 cy%3D%27256%27 r%3D%27170%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2736%27%2F%3E%3Ctext x%3D%27256%27 y%3D%27332%27 font-family%3D%27monospace%27 font-size%3D%27200%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"512x512","type":"image/svg+xml","purpose":"maskable"}]}'>
+
 <title>Subnet &amp; VLSM Planner — Pro Network Design Console</title>
 <style>
   :root{
@@ -13,31 +28,122 @@
     --copper:#E8935C; --danger:#E8687A; --info:#6FB4E8;
     --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-left: env(safe-area-inset-left, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
   }
-  *{box-sizing:border-box;}
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
   html,body{margin:0;padding:0;}
+  html{ -webkit-text-size-adjust:100%; }
   body{
     background: radial-gradient(circle at 15% 0%, rgba(95,217,170,0.05), transparent 40%), var(--ink);
     color:var(--text); font-family:var(--sans); line-height:1.5; min-height:100vh;
+    min-height:100dvh;
+    padding-left:var(--safe-left); padding-right:var(--safe-right);
+    overscroll-behavior-y:contain;
   }
   a{color:var(--signal);} ::selection{background:rgba(95,217,170,0.25);}
-  header{border-bottom:1px solid var(--line); padding:22px 28px 20px;
-    display:flex; align-items:baseline; justify-content:space-between; gap:20px; flex-wrap:wrap;}
-  .brand{display:flex; align-items:baseline; gap:12px;}
+  header{border-bottom:1px solid var(--line); padding:calc(14px + var(--safe-top)) 16px 14px;
+    display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  .brand{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;}
   .brand .mark{width:10px;height:10px;border-radius:50%;background:var(--signal);
     box-shadow:0 0 10px 2px rgba(95,217,170,0.5); display:inline-block; transform:translateY(-1px);}
-  h1{font-size:19px;font-weight:600;margin:0;letter-spacing:0.2px;}
-  .tag{color:var(--text-faint);font-size:13px;font-family:var(--mono);}
-  .headline-sub{color:var(--text-dim);font-size:13.5px;max-width:460px;}
+  h1{font-size:17px;font-weight:600;margin:0;letter-spacing:0.2px;}
+  .tag{color:var(--text-faint);font-size:11.5px;font-family:var(--mono);}
+  .headline-sub{color:var(--text-dim);font-size:12.5px;max-width:100%;}
   .live-badge{display:inline-block;background:rgba(95,217,170,0.12);
     border:1px solid rgba(95,217,170,0.3); color:var(--signal); font-size:10px;
-    padding:1px 8px; border-radius:12px; margin-left:8px; letter-spacing:0.4px;}
+    padding:1px 8px; border-radius:12px; margin-left:6px; letter-spacing:0.4px;}
 
   .shell{display:grid; grid-template-columns:400px 1fr; min-height:calc(100vh - 78px);}
   @media (max-width:1080px){.shell{grid-template-columns:1fr;}}
 
-  .sidebar{border-right:1px solid var(--line); padding:24px; background:var(--panel);
-    max-height:calc(100vh - 78px); overflow-y:auto;}
+  .sidebar{border-right:1px solid var(--line); padding:16px; background:var(--panel);
+    max-height:calc(100vh - 78px); overflow-y:auto; -webkit-overflow-scrolling:touch;}
+
+  @media (max-width: 768px){
+    .shell{ display:block; min-height:auto; }
+    .sidebar{
+      position: fixed; left:0; right:0; bottom:0; top:auto;
+      max-height: 82vh; height:auto;
+      border-right:none; border-top:1px solid var(--line);
+      border-radius: 18px 18px 0 0;
+      box-shadow: 0 -12px 40px rgba(0,0,0,0.55);
+      padding: 18px 14px calc(20px + var(--safe-bottom));
+      z-index: 60;
+      transform: translateY(100%);
+      transition: transform .28s cubic-bezier(.4,.0,.2,1);
+      overflow-y: auto; -webkit-overflow-scrolling: touch;
+    }
+    .sidebar.open{ transform: translateY(0); }
+    .sidebar::before{
+      content:''; display:block; width:44px; height:4px; border-radius:4px;
+      background:var(--line); margin:0 auto 14px;
+    }
+    .drawer-backdrop{
+      position:fixed; inset:0; background:rgba(0,0,0,0.55);
+      opacity:0; pointer-events:none; transition:opacity .25s; z-index:55;
+      backdrop-filter: blur(2px);
+    }
+    .drawer-backdrop.show{ opacity:1; pointer-events:auto; }
+
+    .fab-drawer{
+      position: fixed; right: 16px; bottom: calc(18px + var(--safe-bottom));
+      z-index: 70; width:56px; height:56px; border-radius:50%;
+      background: var(--signal); color:#08201A; border:none;
+      box-shadow: 0 6px 22px rgba(95,217,170,0.4);
+      display: flex; align-items:center; justify-content:center;
+      font-size: 22px; cursor:pointer;
+      transition: transform .2s, background .2s;
+    }
+    .fab-drawer:active{ transform: scale(0.93); }
+    .fab-drawer svg{ width:24px; height:24px; }
+
+    main{
+      padding: 14px 12px calc(100px + var(--safe-bottom));
+      overflow-x:hidden;
+    }
+    header{ padding: calc(12px + var(--safe-top)) 14px 12px; }
+    .headline-sub{ font-size:12px; }
+
+    .tabs{
+      display:flex; gap:2px; border-bottom:1px solid var(--line);
+      margin-bottom:16px; overflow-x:auto; flex-wrap:nowrap;
+      -webkit-overflow-scrolling:touch; scrollbar-width:none;
+      margin-left:-12px; margin-right:-12px; padding-left:12px; padding-right:12px;
+    }
+    .tabs::-webkit-scrollbar{ display:none; }
+    .tab-btn{
+      flex:0 0 auto; padding:10px 12px; font-size:11.5px; white-space:nowrap;
+    }
+
+    .stat-strip{ gap:14px; }
+    thead th{ padding:8px 9px; font-size:11px; }
+    tbody td{ padding:9px 9px; font-size:11.5px; }
+    button.primary{ padding:14px; font-size:15px; }
+    .copy-bar button{ padding:9px 12px; font-size:11px; }
+    .calc-form{ gap:8px; }
+    .calc-form input{ width:100%; }
+    .calc-form .fg{ flex:1 1 100%; }
+    .calc-form button{ width:100%; height:42px; }
+    .topo-wrap{ padding:6px; }
+    #topoSvg{ height:auto; min-height:400px; }
+    pre.code-block{ font-size:11px; padding:12px; max-height:60vh; }
+    .toggle-row{ grid-template-columns:1fr 1fr; }
+  }
+
+  @media (max-width: 480px){
+    .toggle-row{ grid-template-columns:1fr 1fr; }
+    .req-row-grid{ grid-template-columns:1fr 58px 54px; }
+    h1{ font-size:15.5px; }
+    .tag{ font-size:10.5px; }
+  }
+
+  @media (min-width: 769px){
+    .fab-drawer, .drawer-backdrop{ display:none !important; }
+  }
+
   .field-group{margin-bottom:16px;}
   .field-group label{display:block; font-size:11.5px; color:var(--text-dim);
     margin-bottom:6px; font-family:var(--mono);}
@@ -45,6 +151,10 @@
     width:100%; background:var(--panel-2); border:1px solid var(--line); color:var(--text);
     padding:8px 10px; border-radius:5px; font-family:var(--mono); font-size:13px;
     outline:none; transition:border-color .15s ease;
+    font-size:16px;
+  }
+  @media (min-width:769px){
+    input[type=text], input[type=number], select, textarea{ font-size:13px; }
   }
   input:focus, select:focus, textarea:focus{border-color:var(--signal-dim);}
   .base-row{display:grid; grid-template-columns:1fr 80px; gap:8px;}
@@ -111,7 +221,8 @@
   tbody tr:hover{background:rgba(95,217,170,0.03);}
   .pill{display:inline-block; padding:2px 7px; border-radius:20px;
     background:var(--panel-2); border:1px solid var(--line); font-size:10.5px; color:var(--signal);}
-  .table-scroll{overflow-x:auto; border:1px solid var(--line-soft); border-radius:8px;}
+  .table-scroll{overflow-x:auto; border:1px solid var(--line-soft); border-radius:8px;
+    -webkit-overflow-scrolling:touch;}
 
   .copy-bar{display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap;}
   .copy-bar button{background:var(--panel-2); border:1px solid var(--line); color:var(--text-dim);
@@ -120,10 +231,11 @@
 
   pre.code-block{background:var(--panel); border:1px solid var(--line); border-radius:8px;
     padding:16px 18px; font-family:var(--mono); font-size:12px; color:#C8E9DA;
-    overflow-x:auto; line-height:1.65; white-space:pre; max-height:75vh;}
+    overflow-x:auto; line-height:1.65; white-space:pre; max-height:75vh;
+    -webkit-overflow-scrolling:touch;}
 
   .topo-wrap{background:var(--panel); border:1px solid var(--line);
-    border-radius:8px; padding:10px; overflow-x:auto;}
+    border-radius:8px; padding:10px; overflow-x:auto; -webkit-overflow-scrolling:touch;}
 
   .calc-form{display:flex; gap:10px; align-items:flex-end; margin-bottom:20px; flex-wrap:wrap;}
   .calc-form .fg{display:flex; flex-direction:column; gap:6px;}
@@ -141,17 +253,53 @@
   .calc-cell .k{font-size:10.5px; color:var(--text-faint); font-family:var(--mono); margin-bottom:4px;}
   .calc-cell .v{font-size:14.5px; color:var(--text); font-family:var(--mono); word-break:break-all;}
   .calc-cell .v.accent{color:var(--signal);}
+  @media (max-width:768px){
+    .calc-grid{ grid-template-columns:1fr 1fr; }
+    .calc-cell{ padding:10px 12px; }
+    .calc-cell .v{ font-size:13px; }
+  }
+  @media (max-width:400px){
+    .calc-grid{ grid-template-columns:1fr; }
+  }
 
   .supernet-card{background:var(--panel-2); border:1px solid var(--line);
     border-radius:8px; padding:16px 18px; margin-bottom:14px;}
   .supernet-card h3{margin:0 0 10px; font-size:13.5px; font-family:var(--mono);
     color:var(--signal); font-weight:600;}
   .supernet-card .row{font-family:var(--mono); font-size:12.5px; padding:4px 0;
-    color:var(--text-dim);}
+    color:var(--text-dim); word-break:break-word;}
   .supernet-card .row strong{color:var(--text);}
 
-  footer{padding:20px 28px 40px; color:var(--text-faint); font-size:11.5px;
+  footer{padding:20px 16px calc(40px + var(--safe-bottom)); color:var(--text-faint); font-size:11.5px;
     font-family:var(--mono); border-top:1px solid var(--line);}
+
+  .warning-box{background:rgba(232,147,92,0.08); border:1px solid rgba(232,147,92,0.35);
+    color:#F2C49B; padding:11px 14px; border-radius:7px; font-size:12.5px;
+    margin-bottom:14px; font-family:var(--mono); line-height:1.6;}
+
+  .site-row{background:var(--panel-2); border:1px solid var(--line); border-radius:7px;
+    padding:11px; margin-bottom:9px;}
+  .site-row-grid{display:grid; grid-template-columns:1fr; gap:6px; margin-bottom:7px;}
+  .site-row-grid2{display:grid; grid-template-columns:1.3fr 70px; gap:6px; margin-bottom:7px;}
+  .site-row-grid3{display:grid; grid-template-columns:1fr auto; gap:6px; align-items:center;}
+  .site-row input, .site-row select{font-size:12.5px; padding:6px 7px;}
+  .site-row input.invalid{border-color:var(--danger);}
+  .site-note{font-size:10.5px;color:var(--text-faint);font-family:var(--mono);}
+
+  .remote-table-wrap{margin-top:22px;}
+  .remote-table-wrap h3{font-size:12.5px;color:var(--info);font-family:var(--mono);
+    margin:0 0 10px;font-weight:600;}
+
+  .toast{
+    position:fixed; left:50%; bottom:calc(80px + var(--safe-bottom));
+    transform:translateX(-50%) translateY(20px);
+    background:#182229; border:1px solid var(--signal-dim); color:var(--text);
+    padding:10px 16px; border-radius:8px; font-family:var(--mono); font-size:12px;
+    opacity:0; pointer-events:none; transition:opacity .3s, transform .3s;
+    z-index:200; max-width:90vw; text-align:center;
+    box-shadow:0 8px 30px rgba(0,0,0,0.5);
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
@@ -168,20 +316,38 @@
   <div class="headline-sub">Base network, requirements, routing protocol aur switching options — sab kuch edit karo, saare tabs realtime update ho jaate hain.</div>
 </header>
 
+<!-- Mobile drawer backdrop -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+<!-- Mobile FAB to open controls -->
+<button class="fab-drawer" id="fabDrawer" aria-label="Open network controls">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#08201A" stroke-width="2.2" stroke-linecap="round">
+    <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+  </svg>
+</button>
+
 <div class="shell">
 
   <!-- ==================== SIDEBAR ==================== -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
 
     <h2 class="section-title">Base network</h2>
     <div class="field-group">
       <label>Network address / CIDR</label>
       <div class="base-row">
-        <input type="text" id="baseIp" value="192.168.0.0">
-        <input type="number" id="basePrefix" value="23" min="1" max="30">
+        <input type="text" id="baseIp" value="192.168.0.0" inputmode="decimal" autocomplete="off" spellcheck="false">
+        <input type="number" id="basePrefix" value="23" min="1" max="30" inputmode="numeric">
       </div>
       <div class="hint">Default 192.168.0.0/23 — VLSM allocation isi block me hoga.</div>
     </div>
+
+    <h2 class="section-title">
+      Remote sites / WAN networks
+      <span style="font-size:10px;color:var(--text-faint);font-weight:400;">optional</span>
+    </h2>
+    <div id="siteList"></div>
+    <button class="add-row" id="addSiteBtn">+ Add remote site / network</button>
+    <div class="hint">Branch office, DR site ya kisi aur alag network ko yahan add karo — Topology me WAN cloud se connect hoke dikhega, aur Cisco Config me static route / VPN template ban jayega.</div>
 
     <h2 class="section-title">Routing protocol</h2>
     <div class="field-group">
@@ -195,7 +361,7 @@
     </div>
     <div class="field-group">
       <label>Router-ID (for OSPF/BGP)</label>
-      <input type="text" id="routerId" value="1.1.1.1">
+      <input type="text" id="routerId" value="1.1.1.1" inputmode="decimal" autocomplete="off" spellcheck="false">
     </div>
     <div class="field-group">
       <label>BGP — Edge Router (optional)</label>
@@ -203,7 +369,7 @@
         <label class="toggle-chip" id="bgpChip">
           <input type="checkbox" id="bgpEnabled"> Enable BGP
         </label>
-        <input type="number" id="bgpAsn" value="65001" placeholder="Local AS" style="font-size:12px;">
+        <input type="number" id="bgpAsn" value="65001" placeholder="Local AS" style="font-size:12px;" inputmode="numeric">
       </div>
     </div>
 
@@ -232,7 +398,7 @@
     </div>
     <div class="field-group" id="vtpDomainWrap">
       <label>VTP Domain name</label>
-      <input type="text" id="vtpDomain" value="CORP-NET">
+      <input type="text" id="vtpDomain" value="CORP-NET" autocomplete="off" spellcheck="false">
     </div>
     <div class="field-group">
       <label>STP mode</label>
@@ -241,6 +407,19 @@
         <option value="pvst">pvst</option>
         <option value="mst">mst</option>
       </select>
+    </div>
+
+    <h2 class="section-title">Device access (VTY)</h2>
+    <div class="field-group">
+      <div class="toggle-row">
+        <label class="toggle-chip" id="sshChip">
+          <input type="checkbox" id="sshEnabled" checked> SSH
+        </label>
+        <label class="toggle-chip" id="telnetChip">
+          <input type="checkbox" id="telnetEnabled"> Telnet
+        </label>
+      </div>
+      <div class="hint">Dono independently add/remove kar sakte ho. Kam se kam ek on rakhna VTY access ke liye zaroori hai — Telnet unencrypted hai, production me sirf SSH recommended.</div>
     </div>
 
     <h2 class="section-title">
@@ -283,8 +462,14 @@
 
     <!-- TOPO -->
     <div class="panel" id="panel-topo">
+      <div class="copy-bar">
+        <button id="downloadTopoSvg">Download topology as SVG</button>
+        <label class="toggle-chip" id="ifaceChip" style="cursor:pointer;">
+          <input type="checkbox" id="showIfaceToggle"> Show interface names &amp; IPs
+        </label>
+      </div>
       <div class="topo-wrap"><svg id="topoSvg" width="100%" height="560"></svg></div>
-      <p class="hint" style="margin-top:12px;">Router ↔ L3 Core (routed P2P) · Core = VTP Server + STP Root · Access switches = VTP Client · Trunks 802.1Q. Routing protocol shown as badge.</p>
+      <p class="hint" style="margin-top:12px;">Router ↔ L3 Core (routed P2P) · Core = VTP Server + STP Root · Access switches = VTP Client · Trunks 802.1Q. Routing protocol shown as badge. Remote sites (agar add kiye ho) WAN cloud se left side me connect honge. Interface names/IPs optional toggle se dikhao.</p>
     </div>
 
     <!-- CMDS -->
@@ -305,7 +490,7 @@
     <!-- CALC -->
     <div class="panel" id="panel-calc">
       <div class="calc-form">
-        <div class="fg"><label>IP address</label><input type="text" id="calcIp" value="192.168.1.130"></div>
+        <div class="fg"><label>IP address</label><input type="text" id="calcIp" value="192.168.1.130" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
         <div class="fg"><label>CIDR (/)</label><select id="calcPrefix"></select></div>
         <button id="calcBtn">Calculate</button>
       </div>
@@ -315,6 +500,9 @@
 </div>
 
 <footer>Client-side only · Live updates on every edit · Verify commands on real hardware before deploying.</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
 
 <script>
 /* ============================================================
@@ -352,6 +540,99 @@ let rows = JSON.parse(JSON.stringify(DEFAULT_ROWS));
 let lastPlan = null;
 
 /* ============================================================
+   Remote sites / WAN networks (multi-network support)
+   ============================================================ */
+const DEFAULT_SITES = [
+  {name:'Branch Office — Mumbai', ip:'10.20.0.0', prefix:24, linkType:'wan'},
+];
+let remoteSites = JSON.parse(JSON.stringify(DEFAULT_SITES));
+
+const siteList = document.getElementById('siteList');
+function renderSiteRows(){
+  siteList.innerHTML = '';
+  remoteSites.forEach((s, idx)=>{
+    const valid = ipToLong(s.ip)!==null && s.prefix>=1 && s.prefix<=32;
+    const div = document.createElement('div');
+    div.className = 'site-row';
+    div.id = `site-row-${idx}`;
+    div.innerHTML = `
+      <div class="site-row-grid">
+        <input type="text" data-idx="${idx}" data-f="name" value="${s.name}" placeholder="Site name (e.g. Branch Office)" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="site-row-grid2">
+        <input type="text" id="site-ip-${idx}" data-idx="${idx}" data-f="ip" value="${s.ip}" placeholder="Network IP" class="${valid?'':'invalid'}" inputmode="decimal" autocomplete="off" spellcheck="false">
+        <input type="number" data-idx="${idx}" data-f="prefix" value="${s.prefix}" min="1" max="32" placeholder="CIDR" inputmode="numeric">
+      </div>
+      <div class="site-row-grid3">
+        <select data-idx="${idx}" data-f="linkType">
+          <option value="wan" ${s.linkType==='wan'?'selected':''}>WAN / Leased line</option>
+          <option value="vpn" ${s.linkType==='vpn'?'selected':''}>Site-to-Site VPN</option>
+          <option value="mpls" ${s.linkType==='mpls'?'selected':''}>MPLS</option>
+        </select>
+        <button class="remove-row" data-idx="${idx}" data-f="removeSite">✕</button>
+      </div>
+      <div class="site-note" id="site-note-${idx}" style="color:var(--danger); display:${valid?'none':'block'};">invalid IP/CIDR — skipped in topology &amp; commands</div>
+    `;
+    siteList.appendChild(div);
+  });
+}
+renderSiteRows();
+
+siteList.addEventListener('input', (e)=>{
+  const i = e.target.dataset.idx, f = e.target.dataset.f;
+  if(i===undefined) return;
+  if(f==='name') remoteSites[i].name = e.target.value;
+  if(f==='ip'){
+    remoteSites[i].ip = e.target.value;
+    const valid = ipToLong(e.target.value)!==null;
+    e.target.classList.toggle('invalid', !valid);
+    const note = document.getElementById(`site-note-${i}`);
+    if(note) note.style.display = valid ? 'none' : 'block';
+  }
+  if(f==='prefix'){ remoteSites[i].prefix = Math.max(1, Math.min(32, Number(e.target.value)||24)); }
+  regenerateAll();
+});
+siteList.addEventListener('change', (e)=>{
+  const i = e.target.dataset.idx, f = e.target.dataset.f;
+  if(i===undefined) return;
+  if(f==='linkType') remoteSites[i].linkType = e.target.value;
+  regenerateAll();
+});
+siteList.addEventListener('click', (e)=>{
+  if(e.target.dataset.f==='removeSite'){
+    remoteSites.splice(e.target.dataset.idx,1);
+    renderSiteRows(); regenerateAll();
+  }
+});
+document.getElementById('addSiteBtn').addEventListener('click', ()=>{
+  remoteSites.push({name:'New Site', ip:'', prefix:24, linkType:'wan'});
+  renderSiteRows(); regenerateAll();
+});
+
+function getValidRemoteSites(){
+  const valid = [], invalidCount = {n:0};
+  remoteSites.forEach(s=>{
+    const long = ipToLong(s.ip);
+    if(long===null || s.prefix<1 || s.prefix>32 || !s.ip){ invalidCount.n++; return; }
+    const maskLong = prefixToMask(s.prefix);
+    const netLong = (long & maskLong)>>>0;
+    const totalSize = Math.pow(2, 32-s.prefix);
+    const broadcastLong = (netLong + totalSize - 1) >>> 0;
+    const gateway = totalSize<=2 ? 'n/a (P2P/host)' : longToIp(netLong+1);
+    valid.push({
+      name:s.name || 'Unnamed site',
+      ip:longToIp(netLong), prefix:s.prefix, cidr:'/'+s.prefix,
+      mask:maskToDotted(maskLong), wildcard:wildcardFromMask(maskLong),
+      broadcast: totalSize<=2 ? '— (n/a)' : longToIp(broadcastLong),
+      gateway,
+      linkType:s.linkType,
+      linkLabel: s.linkType==='vpn'?'Site-to-Site VPN':s.linkType==='mpls'?'MPLS':'WAN / Leased line'
+    });
+  });
+  return {valid, invalidCount:invalidCount.n};
+}
+
+/* ============================================================
    Sidebar rendering
    ============================================================ */
 const reqList = document.getElementById('reqList');
@@ -362,9 +643,9 @@ function renderReqRows(){
     div.className = 'req-row';
     div.innerHTML = `
       <div class="req-row-grid">
-        <input type="text" data-idx="${idx}" data-f="name" value="${r.name}" placeholder="Name">
-        <input type="number" data-idx="${idx}" data-f="vlan" value="${r.vlan==='-'?'':r.vlan}" placeholder="VLAN">
-        <input type="number" data-idx="${idx}" data-f="hosts" value="${r.hosts}" min="1" placeholder="hosts">
+        <input type="text" data-idx="${idx}" data-f="name" value="${r.name}" placeholder="Name" autocomplete="off" spellcheck="false">
+        <input type="number" data-idx="${idx}" data-f="vlan" value="${r.vlan==='-'?'':r.vlan}" placeholder="VLAN" inputmode="numeric">
+        <input type="number" data-idx="${idx}" data-f="hosts" value="${r.hosts}" min="1" placeholder="hosts" inputmode="numeric">
       </div>
       <div class="req-row-grid2">
         <label class="p2p-toggle">
@@ -410,7 +691,7 @@ document.getElementById('addRowBtn').addEventListener('click', ()=>{
     el.addEventListener('input', regenerateAll);
     el.addEventListener('change', regenerateAll);
   });
-['bgpEnabled','vtpEnabled','stpEnabled','dtpEnabled','etherEnabled','portSecEnabled','hsrpEnabled']
+['bgpEnabled','vtpEnabled','stpEnabled','dtpEnabled','etherEnabled','portSecEnabled','hsrpEnabled','sshEnabled','telnetEnabled']
   .forEach(id=>{
     const el = document.getElementById(id);
     el.addEventListener('change', ()=>{
@@ -420,14 +701,13 @@ document.getElementById('addRowBtn').addEventListener('click', ()=>{
   });
 
 function updateChipVisuals(){
-  ['vtp','stp','dtp','ether','portSec','hsrp','bgp'].forEach(k=>{
+  ['vtp','stp','dtp','ether','portSec','hsrp','bgp','ssh','telnet'].forEach(k=>{
     const chip = document.getElementById(k+'Chip');
     const cb = document.getElementById(k+'Enabled');
     if(chip && cb){
       chip.classList.toggle('active', cb.checked);
     }
   });
-  // VTP domain visibility
   document.getElementById('vtpDomainWrap').style.display =
     document.getElementById('vtpEnabled').checked ? 'block' : 'none';
 }
@@ -442,6 +722,10 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
     document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('panel-'+btn.dataset.tab).classList.add('active');
+    if(window.matchMedia('(max-width:768px)').matches){
+      closeDrawer();
+      document.querySelector('main').scrollIntoView({behavior:'smooth', block:'start'});
+    }
   });
 });
 
@@ -515,7 +799,7 @@ Ab tak: ${used} used · ${free} free.<br>Fix: prefix chhota karo (bigger block) 
 /* ============================================================
    Plan table
    ============================================================ */
-function renderPlan(plan){
+function renderPlan(plan, remoteInfo){
   const body = document.getElementById('planBody');
   body.innerHTML='';
   let tu=0, tr=0;
@@ -538,18 +822,47 @@ function renderPlan(plan){
     <div class="stat"><div class="num">${tu}</div><div class="lbl">usable</div></div>
     <div class="stat"><div class="num">${tr}</div><div class="lbl">requested</div></div>
     <div class="stat"><div class="num">${document.getElementById('routingProto').value.toUpperCase()}</div><div class="lbl">routing</div></div>`;
+
+  const errBox = document.getElementById('planError');
+  const vlanCounts = {};
+  plan.results.forEach(r=>{ if(r.vlan && r.vlan!=='-') vlanCounts[r.vlan]=(vlanCounts[r.vlan]||0)+1; });
+  const dupes = Object.keys(vlanCounts).filter(v=>vlanCounts[v]>1);
+  let warnHtml = '';
+  if(dupes.length){
+    warnHtml += `<div class="warning-box">⚠ Duplicate VLAN ID(s) used: ${dupes.join(', ')} — har department ka VLAN unique hona chahiye.</div>`;
+  }
+  if(remoteInfo && remoteInfo.invalidCount>0){
+    warnHtml += `<div class="warning-box">⚠ ${remoteInfo.invalidCount} remote site(s) ka IP/CIDR invalid hai — Topology &amp; Commands me skip kar diya gaya.</div>`;
+  }
+  errBox.innerHTML = errBox.innerHTML + warnHtml;
+
+  let remoteWrap = document.getElementById('remoteSitesWrap');
+  if(remoteWrap) remoteWrap.remove();
+  if(remoteInfo && remoteInfo.valid.length){
+    remoteWrap = document.createElement('div');
+    remoteWrap.id = 'remoteSitesWrap';
+    remoteWrap.className = 'remote-table-wrap';
+    remoteWrap.innerHTML = `<h3>🌐 Remote Sites / WAN Networks</h3>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Site</th><th>Network</th><th>CIDR</th><th>Mask</th><th>Wildcard</th><th>Link Type</th></tr></thead>
+        <tbody>${remoteInfo.valid.map(s=>`<tr><td>${s.name}</td><td>${s.ip}</td><td>${s.cidr}</td><td>${s.mask}</td><td>${s.wildcard}</td><td>${s.linkLabel}</td></tr>`).join('')}</tbody>
+      </table></div>`;
+    document.getElementById('panel-plan').appendChild(remoteWrap);
+  }
 }
 
 /* ============================================================
    Topology
    ============================================================ */
-function renderTopo(plan){
+function renderTopo(plan, remoteInfo){
   const svg = document.getElementById('topoSvg');
   const lanRows = plan.results.filter(r=>!r.p2p);
   const p2pRows = plan.results.filter(r=>r.p2p);
+  const sites = (remoteInfo && remoteInfo.valid) || [];
   const n = lanRows.length;
-  const width = Math.max(900, n*160);
-  const height = 560;
+  const wanColW = sites.length ? 220 : 0;
+  const width = Math.max(900, n*160) + wanColW;
+  const height = Math.max(560, sites.length*90 + 140);
   svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
   svg.setAttribute('width', width);
   const NS='http://www.w3.org/2000/svg';
@@ -559,11 +872,11 @@ function renderTopo(plan){
   const COL_SIGNAL='#5FD9AA', COL_LINE='#3A4A52', COL_TEXT='#E7EEF1',
         COL_DIM='#8FA3AC', COL_COPPER='#E8935C', COL_INFO='#6FB4E8';
 
-  const routerX=width/2, routerY=55;
-  const coreX=width/2, coreY=180;
+  const routerX=wanColW+(width-wanColW)/2, routerY=55;
+  const coreX=wanColW+(width-wanColW)/2, coreY=180;
   const proto = document.getElementById('routingProto').value.toUpperCase();
+  const showIface = document.getElementById('showIfaceToggle').checked;
 
-  // Router
   svg.appendChild(el('rect',{x:routerX-80,y:routerY-26,width:160,height:52,rx:8,
     fill:'#182229',stroke:COL_SIGNAL,'stroke-width':1.3}));
   svg.appendChild(el('text',{x:routerX,y:routerY-4,'text-anchor':'middle',
@@ -571,15 +884,15 @@ function renderTopo(plan){
   svg.appendChild(el('text',{x:routerX,y:routerY+13,'text-anchor':'middle',
     fill:COL_INFO,'font-size':9.5},`proto: ${proto}${document.getElementById('bgpEnabled').checked?' + BGP':''}`));
 
-  // Link router -> core
   svg.appendChild(el('line',{x1:routerX,y1:routerY+26,x2:coreX,y2:coreY-28,
     stroke:COL_LINE,'stroke-width':2}));
-  if(p2pRows[0]){
-    svg.appendChild(el('text',{x:routerX+8,y:(routerY+coreY)/2,'text-anchor':'start',
+  if(p2pRows[0] && showIface){
+    svg.appendChild(el('text',{x:routerX+8,y:(routerY+coreY)/2-8,'text-anchor':'start',
+      fill:COL_INFO,'font-size':8.5},`R1: Gi0/0  ↔  CORE: Gi1/0/0`));
+    svg.appendChild(el('text',{x:routerX+8,y:(routerY+coreY)/2+6,'text-anchor':'start',
       fill:COL_DIM,'font-size':9},`${p2pRows[0].network}${p2pRows[0].cidr}`));
   }
 
-  // Core switch
   svg.appendChild(el('rect',{x:coreX-130,y:coreY-28,width:260,height:56,rx:8,
     fill:'#182229',stroke:COL_SIGNAL,'stroke-width':1.3}));
   svg.appendChild(el('text',{x:coreX,y:coreY-6,'text-anchor':'middle',
@@ -591,13 +904,17 @@ function renderTopo(plan){
   svg.appendChild(el('text',{x:coreX,y:coreY+12,'text-anchor':'middle',
     fill:COL_INFO,'font-size':9.5},switchBadges.join(' · ')));
 
-  // Access switches
   const rowY = 340;
-  const gap = width/(n+1);
+  const gap = (width-wanColW)/(n+1);
   lanRows.forEach((r,i)=>{
-    const x = gap*(i+1);
+    const x = wanColW + gap*(i+1);
     svg.appendChild(el('line',{x1:coreX,y1:coreY+28,x2:x,y2:rowY-24,
       stroke:COL_LINE,'stroke-width':1.5,'stroke-dasharray':'4,2'}));
+    if(showIface){
+      const midx=(coreX+x)/2, midy=(coreY+28+rowY-24)/2;
+      svg.appendChild(el('text',{x:midx,y:midy,'text-anchor':'middle',fill:COL_INFO,'font-size':8},
+        `Gi1/0/${i+1} ↔ Gi0/1`));
+    }
     svg.appendChild(el('rect',{x:x-62,y:rowY-24,width:124,height:48,rx:7,
       fill:'#131B20',stroke:'#26343C','stroke-width':1.2}));
     svg.appendChild(el('text',{x:x,y:rowY-4,'text-anchor':'middle',fill:COL_TEXT,
@@ -606,7 +923,6 @@ function renderTopo(plan){
     svg.appendChild(el('text',{x:x,y:rowY+11,'text-anchor':'middle',fill:COL_DIM,
       'font-size':9},`VLAN ${r.vlan||'-'} · VTP-Client`));
 
-    // Host cloud
     const ey = rowY+85;
     svg.appendChild(el('line',{x1:x,y1:rowY+24,x2:x,y2:ey-18,
       stroke:COL_LINE,'stroke-width':1.2}));
@@ -616,17 +932,40 @@ function renderTopo(plan){
       'font-size':9}, r.network+r.cidr));
     svg.appendChild(el('text',{x:x,y:ey+11,'text-anchor':'middle',fill:COL_DIM,
       'font-size':8.5}, `gw ${r.gateway}`));
+    if(showIface){
+      svg.appendChild(el('text',{x:x,y:ey+24,'text-anchor':'middle',fill:COL_INFO,
+        'font-size':7.5}, `VLAN${r.vlan||'-'} SVI · ${r.gateway}`));
+    }
   });
 
-  // Legend
-  svg.appendChild(el('text',{x:20,y:height-15,fill:COL_DIM,'font-size':10},
+  if(sites.length){
+    const cloudX = wanColW/2, cloudY = routerY+10;
+    svg.appendChild(el('ellipse',{cx:cloudX,cy:cloudY,rx:75,ry:34,fill:'#182229',stroke:COL_INFO,'stroke-width':1.3,'stroke-dasharray':'5,3'}));
+    svg.appendChild(el('text',{x:cloudX,y:cloudY-2,'text-anchor':'middle',fill:COL_INFO,'font-size':11,'font-weight':600},'WAN / Internet'));
+    svg.appendChild(el('text',{x:cloudX,y:cloudY+13,'text-anchor':'middle',fill:COL_DIM,'font-size':8.5},'core transport'));
+    svg.appendChild(el('line',{x1:cloudX+70,y1:cloudY-4,x2:routerX-80,y2:routerY+2,stroke:COL_LINE,'stroke-width':1.5,'stroke-dasharray':'4,2'}));
+
+    const siteStartY = cloudY+70;
+    sites.forEach((s,i)=>{
+      const sy = siteStartY + i*90;
+      const sx = wanColW/2;
+      svg.appendChild(el('line',{x1:sx,y1:sy-28,x2:cloudX-10,y2:cloudY+30,stroke:COL_LINE,'stroke-width':1.3,'stroke-dasharray':'4,2'}));
+      svg.appendChild(el('rect',{x:sx-78,y:sy-26,width:156,height:52,rx:8,fill:'#131B20',stroke:COL_COPPER,'stroke-width':1.2}));
+      svg.appendChild(el('text',{x:sx,y:sy-6,'text-anchor':'middle',fill:COL_TEXT,'font-size':10.5,'font-weight':600},
+        s.name.length>20?s.name.slice(0,19)+'…':s.name));
+      svg.appendChild(el('text',{x:sx,y:sy+9,'text-anchor':'middle',fill:COL_COPPER,'font-size':9},`${s.ip}${s.cidr}`));
+      svg.appendChild(el('text',{x:sx,y:sy+21,'text-anchor':'middle',fill:COL_DIM,'font-size':8},s.linkLabel));
+    });
+  }
+
+  svg.appendChild(el('text',{x:wanColW+20,y:height-15,fill:COL_DIM,'font-size':10},
     `Point-to-point: ${p2pRows.map(r=>`${r.name} (${r.network}${r.cidr})`).join(' · ') || '—'}`));
 }
 
 /* ============================================================
-   Cisco config generator (BIG ONE)
+   Cisco config generator
    ============================================================ */
-function renderCommands(plan){
+function renderCommands(plan, remoteInfo){
   const lanRows = plan.results.filter(r=>!r.p2p);
   const p2pRows = plan.results.filter(r=>r.p2p);
   const proto = document.getElementById('routingProto').value;
@@ -652,22 +991,20 @@ function renderCommands(plan){
   out += `!  Routing: ${proto.toUpperCase()}${bgpOn?' + BGP':''} · VTP: ${vtpOn?'on':'off'} · STP: ${stpOn?'on':'off'}\n`;
   out += `! ########################################################\n`;
 
-  /* ---------- Router R1 ---------- */
   out += S('ROUTER R1 — Edge router');
   out += `hostname R1\n`;
   out += `service password-encryption\n`;
   out += `no ip domain-lookup\n`;
   if(p2pRows[0]){
-    out += `\ninterface gig0/0\n description To-L3-Core\n ip address ${p2pRows[0].network} ${p2pRows[0].mask}\n no shutdown\n`;
+    const [r1Ip, coreIp] = p2pRows[0].usableRange.split(' – ');
+    out += `\ninterface gig0/0\n description To-L3-Core\n ip address ${r1Ip} ${p2pRows[0].mask}\n no shutdown\n`;
   }
   out += `\ninterface gig0/1\n description To-ISP\n ip address <ISP_PUBLIC_IP> <ISP_MASK>\n no shutdown\n`;
 
-  /* Routing protocol */
   out += S('ROUTER R1 — Routing');
   if(proto==='ospf'){
     out += `router ospf 1\n router-id ${routerId}\n`;
     if(p2pRows[0]) out += ` network ${p2pRows[0].network} 0.0.0.3 area 0\n`;
-    // Redistribute connected LAN subnets via core — but include p2p only
     out += ` passive-interface default\n no passive-interface gig0/0\n!\n`;
   } else if(proto==='eigrp'){
     out += `router eigrp 100\n`;
@@ -675,7 +1012,6 @@ function renderCommands(plan){
     out += ` no auto-summary\n!\n`;
   } else if(proto==='rip'){
     out += `router rip\n version 2\n no auto-summary\n`;
-    // Add classful networks
     const nets = new Set();
     if(p2pRows[0]) nets.add(p2pRows[0].network.split('.').slice(0,2).join('.')+'.0.0');
     lanRows.forEach(r=>nets.add(r.network.split('.').slice(0,2).join('.')+'.0.0'));
@@ -695,10 +1031,13 @@ function renderCommands(plan){
 
   out += `\n! default route to ISP\nip route 0.0.0.0 0.0.0.0 <ISP_NEXT_HOP>\n`;
 
-  /* ---------- L3 Core Switch ---------- */
   out += S('L3 CORE SWITCH');
   out += `hostname CORE-SW1\n`;
   out += `ip routing\n`;
+  if(p2pRows[0]){
+    const [r1Ip, coreIp] = p2pRows[0].usableRange.split(' – ');
+    out += `\ninterface gig1/0/0\n description To-R1\n no switchport\n ip address ${coreIp} ${p2pRows[0].mask}\n no shutdown\n!\n`;
+  }
 
   if(vtpOn){
     out += S('L3 CORE — VTP Server');
@@ -728,7 +1067,6 @@ function renderCommands(plan){
     if(r.vlan && r.vlan!=='-'){
       out += `interface vlan ${r.vlan}\n description ${r.name}\n`;
       if(hsrpOn){
-        // Show HSRP virtual IP as .1
         const gwLong = ipToLong(r.gateway);
         out += ` ip address ${r.gateway} ${r.mask}\n`;
         out += ` standby 1 ip ${longToIp(gwLong)}\n standby 1 priority 150\n standby 1 preempt\n`;
@@ -768,16 +1106,15 @@ function renderCommands(plan){
     out += `interface range gig1/0/1 - 2\n channel-group 1 mode active\n!\n`;
     out += `interface port-channel 1\n switchport trunk encapsulation dot1q\n switchport mode trunk\n switchport trunk allowed vlan ${vlans.join(',')}\n!\n`;
   } else {
-    out += `interface range gig1/0/1 - 4\n switchport trunk encapsulation dot1q\n switchport mode trunk\n switchport trunk allowed vlan ${vlans.join(',')}\n`;
+    out += `interface range gig1/0/1 - 4\n switchport trunk encapsulation dot1q\n`;
     if(dtpOn){
-      out += ` switchport mode dynamic desirable\n`;
+      out += ` switchport mode dynamic desirable\n switchport trunk allowed vlan ${vlans.join(',')}\n`;
     } else {
-      out += ` switchport nonegotiate\n`;
+      out += ` switchport mode trunk\n switchport nonegotiate\n switchport trunk allowed vlan ${vlans.join(',')}\n`;
     }
     out += `!\n`;
   }
 
-  /* ---------- Access switches ---------- */
   out += S('ACCESS SWITCHES (template — repeat per switch)');
   out += `! On each access switch:\n`;
   if(vtpOn){
@@ -786,7 +1123,7 @@ function renderCommands(plan){
   if(stpOn){
     out += `spanning-tree mode ${stpMode}\n`;
   }
-  out += `! Uplink to core:\ninterface gig0/1\n switchport trunk encapsulation dot1q\n switchport mode trunk\n`;
+  out += `! Uplink to core:\ninterface gig0/1\n switchport trunk encapsulation dot1q\n`;
   if(dtpOn){
     out += ` switchport mode dynamic auto\n`;
   } else {
@@ -806,7 +1143,6 @@ function renderCommands(plan){
     }
   });
 
-  /* ---------- DHCP ---------- */
   out += S('DHCP (on L3 CORE)');
   lanRows.forEach(r=>{
     if(r.vlan && r.vlan!=='-'){
@@ -819,20 +1155,67 @@ function renderCommands(plan){
     }
   });
 
-  /* ---------- Security extras ---------- */
-  out += S('SECURITY HARDENING');
+  const sshOn = document.getElementById('sshEnabled').checked;
+  const telnetOn = document.getElementById('telnetEnabled').checked;
+  out += S('DEVICE ACCESS (VTY) — R1 & CORE-SW1');
   out += `enable secret <STRONG_SECRET>\n`;
-  out += `line vty 0 4\n transport input ssh\n login local\n!\n`;
   out += `username admin privilege 15 secret <ADMIN_PASS>\n`;
-  out += `crypto key generate rsa modulus 2048\n`;
-  out += `ip ssh version 2\n`;
+  const transports = [];
+  if(sshOn) transports.push('ssh');
+  if(telnetOn) transports.push('telnet');
+  out += `line vty 0 4\n login local\n transport input ${transports.length?transports.join(' '):'none'}\n!\n`;
+  if(sshOn){
+    out += `ip domain-name corp.local\ncrypto key generate rsa modulus 2048\nip ssh version 2\n`;
+  }
+  if(telnetOn && !sshOn){
+    out += `! WARNING: Telnet is unencrypted — SSH recommended for production use.\n`;
+  }
+  if(!sshOn && !telnetOn){
+    out += `! WARNING: No remote VTY access enabled — console-only management.\n`;
+  }
 
-  /* ---------- P2P ---------- */
-  if(p2pRows.length){
-    out += S('POINT-TO-POINT LINKS');
-    p2pRows.forEach(r=>{
-      out += `! ${r.name}: ${r.network}${r.cidr}\ninterface gig0/1\n ip address ${r.network} ${r.mask}\n no shutdown\n!\n`;
+  if(p2pRows.length>1){
+    out += S('ADDITIONAL POINT-TO-POINT LINKS (on R1 — extra WAN/router uplinks)');
+    p2pRows.slice(1).forEach((r,idx)=>{
+      const [thisEnd, peerEnd] = r.usableRange.split(' – ');
+      out += `! ${r.name}: ${r.network}${r.cidr}  (this end: ${thisEnd}, peer end: ${peerEnd})\n`;
+      out += `interface gig0/${2+idx}\n description ${r.name.replace(/\s+/g,'_')}\n ip address ${thisEnd} ${r.mask}\n no shutdown\n!\n`;
     });
+  }
+
+  const sites = (remoteInfo && remoteInfo.valid) || [];
+  if(sites.length){
+    out += S('REMOTE SITES / WAN CONNECTIVITY (on R1)');
+    sites.forEach(s=>{
+      out += `! --- ${s.name} (${s.linkLabel}) ---\n`;
+      out += `!   Network ID : ${s.ip}${s.cidr}\n`;
+      out += `!   Subnet Mask: ${s.mask}\n`;
+      out += `!   Wildcard   : ${s.wildcard}\n`;
+      out += `!   Broadcast  : ${s.broadcast}\n`;
+      out += `!   Gateway    : ${s.gateway} (their side, suggested)\n`;
+      out += `ip route ${s.ip} ${s.mask} <WAN_NEXT_HOP_IP>   ! replace with real WAN/VPN peer IP for ${s.name}\n`;
+    });
+    if(proto==='ospf'){
+      out += `router ospf 1\n redistribute static subnets\n!\n`;
+    } else if(proto==='eigrp'){
+      out += `router eigrp 100\n redistribute static\n!\n`;
+    } else if(proto==='rip'){
+      out += `router rip\n redistribute static\n!\n`;
+    }
+
+    const vpnSites = sites.filter(s=>s.linkType==='vpn');
+    if(vpnSites.length){
+      out += S('SITE-TO-SITE VPN TEMPLATE (repeat/adjust per remote peer)');
+      vpnSites.forEach((s,i)=>{
+        out += `! --- ${s.name} ---\n`;
+        out += `crypto isakmp policy ${10+i}\n encryption aes 256\n authentication pre-share\n group 14\n hash sha256\n!\n`;
+        out += `crypto isakmp key <PRE_SHARED_KEY> address <${s.name.replace(/\s+/g,'_').toUpperCase()}_PEER_PUBLIC_IP>\n!\n`;
+        out += `crypto ipsec transform-set TSET-${i+1} esp-aes 256 esp-sha256-hmac\n mode tunnel\n!\n`;
+        out += `access-list 10${i+1} permit ip <LOCAL_LAN_NETWORK> <LOCAL_LAN_WILDCARD> ${s.ip} ${s.wildcard}\n!\n`;
+        out += `crypto map VPN-MAP ${10+i} ipsec-isakmp\n set peer <${s.name.replace(/\s+/g,'_').toUpperCase()}_PEER_PUBLIC_IP>\n set transform-set TSET-${i+1}\n match address 10${i+1}\n!\n`;
+      });
+      out += `interface gig0/1\n crypto map VPN-MAP\n!\n`;
+    }
   }
 
   document.getElementById('cmdsBlock').textContent = out;
@@ -847,12 +1230,10 @@ function renderSupernet(plan){
     container.innerHTML = '<p class="hint">Pehle valid plan generate karo.</p>';
     return;
   }
-  // Find smallest supernet containing all subnets
   const longs = plan.results.map(r=>r.networkLong);
   const min = Math.min(...longs);
   const max = Math.max(...plan.results.map(r=>r.broadcastLong));
 
-  // Find common prefix between min and max
   let commonPrefix = 0;
   for(let i=31;i>=0;i--){
     const mask = (0xFFFFFFFF << (32-i))>>>0;
@@ -865,9 +1246,6 @@ function renderSupernet(plan){
   const superNet = (min & superMask)>>>0;
   const superBroadcast = superNet + Math.pow(2,32-commonPrefix) - 1;
   const savedSize = Math.pow(2,32-commonPrefix);
-
-  // Also compute per-protocol route summary
-  const prefixes = plan.results.map(r=>r.cidr).join(', ');
 
   let html = '';
   html += `<div class="supernet-card">
@@ -883,7 +1261,6 @@ function renderSupernet(plan){
     <div class="row">Total addresses: <strong>${savedSize}</strong></div>
   </div>`;
 
-  // Subnet-by-subnet summary breakdown (adjacent blocks)
   html += `<div class="supernet-card">
     <h3>📊 Per-Department Subnets</h3>
     ${plan.results.map(r=>`
@@ -891,7 +1268,6 @@ function renderSupernet(plan){
     `).join('')}
   </div>`;
 
-  // VLSM order (largest first)
   const sortedDesc = [...plan.results].sort((a,b)=>b.blockSize - a.blockSize);
   html += `<div class="supernet-card">
     <h3>📐 VLSM Allocation Order (largest → smallest)</h3>
@@ -900,7 +1276,6 @@ function renderSupernet(plan){
     `).join('')}
   </div>`;
 
-  // Suggested routing advertisements
   html += `<div class="supernet-card">
     <h3>📢 Suggested Route Advertisements</h3>
     <div class="row">Advertise the summary to reduce routing table size:</div>
@@ -911,7 +1286,6 @@ function renderSupernet(plan){
     <div class="row">For BGP: <strong>network ${longToIp(superNet)} mask ${maskToDotted(superMask)}</strong></div>
   </div>`;
 
-  // Supernetting examples
   html += `<div class="supernet-card">
     <h3>🧠 Supernetting Examples (learn)</h3>
     <div class="row">2 × /24 → 1 × /23 (e.g. 192.168.0.0/24 + 192.168.1.0/24 = 192.168.0.0/23)</div>
@@ -931,6 +1305,7 @@ function renderSupernet(plan){
    ============================================================ */
 function regenerateAll(){
   const plan = computeVLSM();
+  const remoteInfo = getValidRemoteSites();
   if(!plan){
     document.getElementById('planStats').innerHTML='';
     document.getElementById('planBody').innerHTML='';
@@ -941,9 +1316,9 @@ function regenerateAll(){
     return;
   }
   lastPlan = plan;
-  renderPlan(plan);
-  renderTopo(plan);
-  renderCommands(plan);
+  renderPlan(plan, remoteInfo);
+  renderTopo(plan, remoteInfo);
+  renderCommands(plan, remoteInfo);
   renderSupernet(plan);
 }
 
@@ -954,17 +1329,42 @@ document.getElementById('copyCmds').addEventListener('click', ()=>{
   navigator.clipboard.writeText(document.getElementById('cmdsBlock').textContent).then(()=>{
     const b = document.getElementById('copyCmds');
     const o = b.textContent; b.textContent='Copied ✓'; setTimeout(()=>b.textContent=o,1400);
+    showToast('Commands copied to clipboard');
+  }).catch(()=>{
+    showToast('Copy failed — long-press to select manually');
   });
 });
-document.getElementById('downloadCmds').addEventListener('click', ()=>{
-  const blob = new Blob([document.getElementById('cmdsBlock').textContent], {type:'text/plain'});
+function downloadText(text, filename){
+  const blob = new Blob([text], {type:'text/plain'});
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob); a.download='network-config.txt'; a.click();
+  a.href = URL.createObjectURL(blob); a.download = filename; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+}
+document.getElementById('downloadCmds').addEventListener('click', ()=>{
+  downloadText(document.getElementById('cmdsBlock').textContent, 'network-config.txt');
 });
 document.getElementById('downloadFull').addEventListener('click', ()=>{
-  const blob = new Blob([document.getElementById('cmdsBlock').textContent], {type:'text/plain'});
+  downloadText(document.getElementById('cmdsBlock').textContent, 'network-config-full.txt');
+});
+document.getElementById('downloadTopoSvg').addEventListener('click', ()=>{
+  const svgEl = document.getElementById('topoSvg');
+  const clone = svgEl.cloneNode(true);
+  clone.setAttribute('xmlns','http://www.w3.org/2000/svg');
+  clone.setAttribute('style','background:#0D1316');
+  const bg = document.createElementNS('http://www.w3.org/2000/svg','rect');
+  bg.setAttribute('x','0'); bg.setAttribute('y','0');
+  bg.setAttribute('width','100%'); bg.setAttribute('height','100%');
+  bg.setAttribute('fill','#0D1316');
+  clone.insertBefore(bg, clone.firstChild);
+  const src = new XMLSerializer().serializeToString(clone);
+  const blob = new Blob([src], {type:'image/svg+xml'});
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob); a.download='network-config-full.txt'; a.click();
+  a.href = URL.createObjectURL(blob); a.download='topology.svg'; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+});
+document.getElementById('showIfaceToggle').addEventListener('change', (e)=>{
+  document.getElementById('ifaceChip').classList.toggle('active', e.target.checked);
+  regenerateAll();
 });
 
 /* ============================================================
@@ -1021,10 +1421,102 @@ document.getElementById('calcBtn').addEventListener('click', runQuickCalc);
 runQuickCalc();
 
 /* ============================================================
+   Mobile drawer logic
+   ============================================================ */
+const sidebar = document.getElementById('sidebar');
+const backdrop = document.getElementById('drawerBackdrop');
+const fab = document.getElementById('fabDrawer');
+
+function openDrawer(){
+  sidebar.classList.add('open');
+  backdrop.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer(){
+  sidebar.classList.remove('open');
+  backdrop.classList.remove('show');
+  document.body.style.overflow = '';
+}
+fab.addEventListener('click', openDrawer);
+backdrop.addEventListener('click', closeDrawer);
+
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
+
+let touchStartY = 0;
+sidebar.addEventListener('touchstart', (e)=>{
+  if(e.target === sidebar || e.target.tagName === 'H2'){
+    touchStartY = e.touches[0].clientY;
+  }
+}, {passive:true});
+sidebar.addEventListener('touchmove', (e)=>{
+  if(touchStartY){
+    const dy = e.touches[0].clientY - touchStartY;
+    if(dy > 80){ closeDrawer(); touchStartY = 0; }
+  }
+}, {passive:true});
+
+/* ============================================================
+   Toast helper
+   ============================================================ */
+let toastTimer = null;
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 2200);
+}
+
+/* ============================================================
+   PWA — Service Worker registration (NO INSTALL PROMPT)
+   ============================================================ */
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{
+    const swCode = `
+      const CACHE = 'vlsm-planner-v1';
+      self.addEventListener('install', (e)=>{
+        self.skipWaiting();
+      });
+      self.addEventListener('activate', (e)=>{
+        e.waitUntil(self.clients.claim());
+      });
+      self.addEventListener('fetch', (e)=>{
+        e.respondWith(
+          fetch(e.request).then((res)=>{
+            const copy = res.clone();
+            caches.open(CACHE).then((c)=>c.put(e.request, copy)).catch(()=>{});
+            return res;
+          }).catch(()=> caches.match(e.request))
+        );
+      });
+    `;
+    const blob = new Blob([swCode], {type:'application/javascript'});
+    const swUrl = URL.createObjectURL(blob);
+    navigator.serviceWorker.register(swUrl).catch(()=>{});
+  });
+}
+
+/* ============================================================
+   NOTE: `beforeinstallprompt` is intentionally NOT captured or
+   triggered. The app can still be installed via browser menu
+   ("Add to Home Screen") but no automatic pop-up will appear.
+   ============================================================ */
+
+/* ============================================================
    Init
    ============================================================ */
-document.getElementById('generateBtn').addEventListener('click', regenerateAll);
+document.getElementById('generateBtn').addEventListener('click', ()=>{
+  regenerateAll();
+  if(window.matchMedia('(max-width:768px)').matches){
+    closeDrawer();
+    showToast('✅ Plan generated');
+  }
+});
 regenerateAll();
+
+if(window.matchMedia('(max-width:768px)').matches){
+  setTimeout(()=>showToast('👆 FAB se controls kholo · tabs swipe karo'), 1200);
+}
 </script>
 </body>
 </html>
