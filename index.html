@@ -9,18 +9,18 @@
 <meta name="apple-mobile-web-app-title" content="VLSM Planner">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="application-name" content="VLSM Planner">
-<meta name="description" content="Subnet & VLSM Planner — Pro Network Design Console. IPv4 VLSM, routing protocols, Cisco IOS config generator.">
+<meta name="description" content="Subnet & VLSM Planner — Pro Network Design Console.">
 
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D1316'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%235FD9AA' stroke-width='3.5'/%3E%3Ctext x='32' y='41' font-family='monospace' font-size='22' font-weight='700' fill='%235FD9AA' text-anchor='middle'%3E/V%3C/text%3E%3C/svg%3E">
+<!-- ✅ ICONS — icons/ folder se -->
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
 
-<!-- Apple Touch Icon (iPhone/iPad home screen) -->
-<link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%230D1316'/%3E%3Ccircle cx='90' cy='90' r='58' fill='none' stroke='%235FD9AA' stroke-width='11'/%3E%3Ctext x='90' y='115' font-family='monospace' font-size='66' font-weight='700' fill='%235FD9AA' text-anchor='middle'%3E/V%3C/text%3E%3C/svg%3E">
-
-<!-- ========== PWA MANIFEST (proper, with icons) ========== -->
-<link rel="manifest" href='data:application/manifest+json,{"id":"vlsm-planner-pro","name":"Subnet %26 VLSM Planner %C2%B7 Pro","short_name":"VLSM Planner","description":"Pro Network Design Console %E2%80%94 IPv4 VLSM, routing protocols, Cisco IOS config generator.","start_url":"./","scope":"./","display":"standalone","display_override":["standalone","minimal-ui"],"orientation":"any","background_color":"%230D1316","theme_color":"%230D1316","lang":"en","dir":"ltr","categories":["productivity","utilities","developer"],"icons":[{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 192 192%27%3E%3Crect width%3D%27192%27 height%3D%27192%27 rx%3D%2742%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%2796%27 cy%3D%2796%27 r%3D%2762%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2712%27%2F%3E%3Ctext x%3D%2796%27 y%3D%27121%27 font-family%3D%27monospace%27 font-size%3D%2770%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"192x192","type":"image/svg+xml","purpose":"any"},{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 512 512%27%3E%3Crect width%3D%27512%27 height%3D%27512%27 rx%3D%27112%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%27256%27 cy%3D%27256%27 r%3D%27165%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2732%27%2F%3E%3Ctext x%3D%27256%27 y%3D%27322%27 font-family%3D%27monospace%27 font-size%3D%27188%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"512x512","type":"image/svg+xml","purpose":"any"},{"src":"data:image/svg%2Bxml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 512 512%27%3E%3Crect width%3D%27512%27 height%3D%27512%27 fill%3D%27%230D1316%27%2F%3E%3Ccircle cx%3D%27256%27 cy%3D%27256%27 r%3D%27140%27 fill%3D%27none%27 stroke%3D%27%235FD9AA%27 stroke-width%3D%2730%27%2F%3E%3Ctext x%3D%27256%27 y%3D%27320%27 font-family%3D%27monospace%27 font-size%3D%27160%27 font-weight%3D%27700%27 fill%3D%27%235FD9AA%27 text-anchor%3D%27middle%27%3E%2FV%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"512x512","type":"image/svg+xml","purpose":"maskable"}]}'>
+<!-- ✅ MANIFEST — separate file -->
+<link rel="manifest" href="manifest.json">
 
 <title>Subnet &amp; VLSM Planner — Pro Network Design Console</title>
+
 <style>
   :root{
     --ink:#0D1316; --panel:#131B20; --panel-2:#182229;
@@ -324,7 +324,6 @@
   }
   .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
 
-  /* ===== Install helper banner for iOS (no native prompt) ===== */
   .ios-install-banner{
     display:none;
     position:fixed; left:12px; right:12px; bottom:calc(12px + var(--safe-bottom));
@@ -364,10 +363,8 @@
   <div class="tag">IPv4 · VLSM · Routing (RIP/OSPF/EIGRP/BGP) · Switching (VTP/STP/DTP) · Cisco IOS</div>
 </header>
 
-<!-- Mobile drawer backdrop -->
 <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
-<!-- Mobile FAB to open controls -->
 <button class="fab-drawer" id="fabDrawer" aria-label="Open network controls">
   <svg viewBox="0 0 24 24" fill="none" stroke="#08201A" stroke-width="2.2" stroke-linecap="round">
     <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
@@ -376,7 +373,6 @@
 
 <div class="shell">
 
-  <!-- ==================== SIDEBAR ==================== -->
   <div class="sidebar" id="sidebar">
 
     <h2 class="section-title">Base network</h2>
@@ -481,7 +477,6 @@
     <div class="hint">Sab kuch live update hota hai. Formula: usable = 2^h − 2. P2P rows /31 select kar sakte ho.</div>
   </div>
 
-  <!-- ==================== MAIN ==================== -->
   <main>
     <div class="tabs">
       <button class="tab-btn active" data-tab="plan">01 · IP Plan</button>
@@ -491,7 +486,6 @@
       <button class="tab-btn" data-tab="calc">05 · Subnet Calc</button>
     </div>
 
-    <!-- PLAN -->
     <div class="panel active" id="panel-plan">
       <div id="planError"></div>
       <div id="planStats" class="stat-strip"></div>
@@ -508,7 +502,6 @@
       </div>
     </div>
 
-    <!-- TOPO -->
     <div class="panel" id="panel-topo">
       <div class="copy-bar">
         <button id="downloadTopoSvg">Download topology as SVG</button>
@@ -520,7 +513,6 @@
       <p class="hint" style="margin-top:12px;">Router ↔ L3 Core (routed P2P) · Core = VTP Server + STP Root · Access switches = VTP Client · Trunks 802.1Q. Routing protocol shown as badge. Remote sites (agar add kiye ho) WAN cloud se left side me connect honge. Interface names/IPs optional toggle se dikhao.</p>
     </div>
 
-    <!-- CMDS -->
     <div class="panel" id="panel-cmds">
       <div class="copy-bar">
         <button id="copyCmds">Copy</button>
@@ -530,12 +522,10 @@
       <pre class="code-block" id="cmdsBlock"></pre>
     </div>
 
-    <!-- SUPERNETTING -->
     <div class="panel" id="panel-supernet">
       <div id="supernetContent"></div>
     </div>
 
-    <!-- CALC -->
     <div class="panel" id="panel-calc">
       <div class="calc-form">
         <div class="fg"><label>IP address</label><input type="text" id="calcIp" value="192.168.1.130" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
@@ -549,10 +539,8 @@
 
 <footer>Client-side only · Live updates on every edit · Verify commands on real hardware before deploying.</footer>
 
-<!-- Toast -->
 <div class="toast" id="toast"></div>
 
-<!-- iOS install helper banner -->
 <div class="ios-install-banner" id="iosBanner">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/>
@@ -596,9 +584,6 @@ const DEFAULT_ROWS = [
 let rows = JSON.parse(JSON.stringify(DEFAULT_ROWS));
 let lastPlan = null;
 
-/* ============================================================
-   Remote sites / WAN networks (multi-network support)
-   ============================================================ */
 const DEFAULT_SITES = [
   {name:'Branch Office — Mumbai', ip:'10.20.0.0', prefix:24, linkType:'wan'},
 ];
@@ -689,9 +674,6 @@ function getValidRemoteSites(){
   return {valid, invalidCount:invalidCount.n};
 }
 
-/* ============================================================
-   Sidebar rendering
-   ============================================================ */
 const reqList = document.getElementById('reqList');
 function renderReqRows(){
   reqList.innerHTML = '';
@@ -741,7 +723,6 @@ document.getElementById('addRowBtn').addEventListener('click', ()=>{
   renderReqRows(); regenerateAll();
 });
 
-/* Live update on all sidebar controls */
 ['baseIp','basePrefix','routingProto','routerId','bgpAsn','vtpDomain','stpMode']
   .forEach(id=>{
     const el = document.getElementById(id);
@@ -770,9 +751,6 @@ function updateChipVisuals(){
 }
 updateChipVisuals();
 
-/* ============================================================
-   Tabs
-   ============================================================ */
 document.querySelectorAll('.tab-btn').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -786,9 +764,6 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
   });
 });
 
-/* ============================================================
-   VLSM
-   ============================================================ */
 function computeVLSM(){
   const baseIp = document.getElementById('baseIp').value;
   const basePrefix = Number(document.getElementById('basePrefix').value);
@@ -853,9 +828,6 @@ Ab tak: ${used} used · ${free} free.<br>Fix: prefix chhota karo (bigger block) 
     netLong: netAligned, rangeEndLong: rangeEnd};
 }
 
-/* ============================================================
-   Plan table
-   ============================================================ */
 function renderPlan(plan, remoteInfo){
   const body = document.getElementById('planBody');
   body.innerHTML='';
@@ -908,9 +880,6 @@ function renderPlan(plan, remoteInfo){
   }
 }
 
-/* ============================================================
-   Topology
-   ============================================================ */
 function renderTopo(plan, remoteInfo){
   const svg = document.getElementById('topoSvg');
   const lanRows = plan.results.filter(r=>!r.p2p);
@@ -1019,9 +988,6 @@ function renderTopo(plan, remoteInfo){
     `Point-to-point: ${p2pRows.map(r=>`${r.name} (${r.network}${r.cidr})`).join(' · ') || '—'}`));
 }
 
-/* ============================================================
-   Cisco config generator
-   ============================================================ */
 function renderCommands(plan, remoteInfo){
   const lanRows = plan.results.filter(r=>!r.p2p);
   const p2pRows = plan.results.filter(r=>r.p2p);
@@ -1278,9 +1244,6 @@ function renderCommands(plan, remoteInfo){
   document.getElementById('cmdsBlock').textContent = out;
 }
 
-/* ============================================================
-   Supernetting calculator
-   ============================================================ */
 function renderSupernet(plan){
   const container = document.getElementById('supernetContent');
   if(!plan || plan.results.length===0){
@@ -1357,9 +1320,6 @@ function renderSupernet(plan){
   container.innerHTML = html;
 }
 
-/* ============================================================
-   Master regenerate
-   ============================================================ */
 function regenerateAll(){
   const plan = computeVLSM();
   const remoteInfo = getValidRemoteSites();
@@ -1379,9 +1339,6 @@ function regenerateAll(){
   renderSupernet(plan);
 }
 
-/* ============================================================
-   Copy / download
-   ============================================================ */
 document.getElementById('copyCmds').addEventListener('click', ()=>{
   navigator.clipboard.writeText(document.getElementById('cmdsBlock').textContent).then(()=>{
     const b = document.getElementById('copyCmds');
@@ -1424,9 +1381,6 @@ document.getElementById('showIfaceToggle').addEventListener('change', (e)=>{
   regenerateAll();
 });
 
-/* ============================================================
-   Subnet calculator
-   ============================================================ */
 const calcPrefixSel = document.getElementById('calcPrefix');
 for(let i=1;i<=32;i++){
   const o = document.createElement('option'); o.value=i; o.textContent=i;
@@ -1477,9 +1431,6 @@ function runQuickCalc(){
 document.getElementById('calcBtn').addEventListener('click', runQuickCalc);
 runQuickCalc();
 
-/* ============================================================
-   Mobile drawer logic
-   ============================================================ */
 const sidebar = document.getElementById('sidebar');
 const backdrop = document.getElementById('drawerBackdrop');
 const fab = document.getElementById('fabDrawer');
@@ -1512,9 +1463,6 @@ sidebar.addEventListener('touchmove', (e)=>{
   }
 }, {passive:true});
 
-/* ============================================================
-   Toast helper
-   ============================================================ */
 let toastTimer = null;
 function showToast(msg){
   const t = document.getElementById('toast');
@@ -1525,30 +1473,18 @@ function showToast(msg){
 }
 
 /* ============================================================
-   PWA INSTALL — proper implementation
-   ============================================================
-   Behavior:
-   - On desktop Chrome/Edge: install button appears in header,
-     click → native install prompt
-   - On Android Chrome: install button appears, click → native prompt
-     (also `beforeinstallprompt` fires, we capture it)
-   - On iOS Safari: no native prompt available → show a helper banner
-     telling user to use Share → Add to Home Screen
-   - App detects if already installed (standalone mode) → hide button
+   PWA INSTALL
    ============================================================ */
-
 const installBtn = document.getElementById('installBtn');
 const iosBanner = document.getElementById('iosBanner');
 let deferredInstallPrompt = null;
 
-// Detect standalone mode (already installed/opened as app)
 function isStandalone(){
   return window.matchMedia('(display-mode: standalone)').matches
       || window.matchMedia('(display-mode: minimal-ui)').matches
       || window.navigator.standalone === true;
 }
 
-// Detect iOS Safari (no beforeinstallprompt support)
 function isIOSSafari(){
   const ua = window.navigator.userAgent;
   const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
@@ -1556,7 +1492,6 @@ function isIOSSafari(){
   return isIOS && isSafari;
 }
 
-// Capture the install prompt (Chrome/Edge/Android)
 window.addEventListener('beforeinstallprompt', (e)=>{
   e.preventDefault();
   deferredInstallPrompt = e;
@@ -1565,7 +1500,6 @@ window.addEventListener('beforeinstallprompt', (e)=>{
   }
 });
 
-// Hide install UI when app is installed
 window.addEventListener('appinstalled', ()=>{
   installBtn.classList.remove('show');
   iosBanner.classList.remove('show');
@@ -1573,10 +1507,8 @@ window.addEventListener('appinstalled', ()=>{
   showToast('✅ VLSM Planner installed');
 });
 
-// Install button click
 installBtn.addEventListener('click', async ()=>{
   if(!deferredInstallPrompt){
-    // Fallback — show platform-specific instructions
     if(isIOSSafari()){
       iosBanner.classList.add('show');
     } else {
@@ -1595,10 +1527,8 @@ installBtn.addEventListener('click', async ()=>{
   installBtn.classList.remove('show');
 });
 
-// iOS — show helper banner (auto + button)
 if(isIOSSafari() && !isStandalone()){
   installBtn.classList.add('show');
-  // Auto-show after short delay, but user can dismiss
   setTimeout(()=>{
     if(!localStorage.getItem('iosBannerDismissed')){
       iosBanner.classList.add('show');
@@ -1610,38 +1540,19 @@ document.getElementById('iosBannerClose').addEventListener('click', ()=>{
   try{ localStorage.setItem('iosBannerDismissed','1'); }catch(e){}
 });
 
-// If already installed → make sure button hidden
 if(isStandalone()){
   installBtn.classList.remove('show');
 }
 
 /* ============================================================
-   Service Worker — offline caching
+   Service Worker Registration (ExamPro-style)
    ============================================================ */
-if('serviceWorker' in navigator){
-  window.addEventListener('load', ()=>{
-    const swCode = `
-      const CACHE = 'vlsm-planner-v2';
-      self.addEventListener('install', (e)=>{
-        self.skipWaiting();
-      });
-      self.addEventListener('activate', (e)=>{
-        e.waitUntil(self.clients.claim());
-      });
-      self.addEventListener('fetch', (e)=>{
-        if(e.request.method !== 'GET') return;
-        e.respondWith(
-          fetch(e.request).then((res)=>{
-            const copy = res.clone();
-            caches.open(CACHE).then((c)=>c.put(e.request, copy)).catch(()=>{});
-            return res;
-          }).catch(()=> caches.match(e.request))
-        );
-      });
-    `;
-    const blob = new Blob([swCode], {type:'application/javascript'});
-    const swUrl = URL.createObjectURL(blob);
-    navigator.serviceWorker.register(swUrl).catch(()=>{});
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      // Check for updates every hour
+      setInterval(() => reg.update(), 60 * 60 * 1000);
+    }).catch(() => {});
   });
 }
 
@@ -1660,6 +1571,23 @@ regenerateAll();
 if(window.matchMedia('(max-width:768px)').matches && !isStandalone()){
   setTimeout(()=>showToast('👆 FAB se controls kholo · top-right install button dabao'), 1500);
 }
+/* ============================================================
+   URL param handling — shortcuts ke liye (?tab=plan, ?tab=cmds)
+   ============================================================ */
+(function handleUrlParams(){
+  const params = new URLSearchParams(location.search);
+  const tab = params.get('tab');
+  if (tab && ['plan','topo','cmds','supernet','calc'].includes(tab)) {
+    setTimeout(() => {
+      const btn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+      if (btn) btn.click();
+    }, 100);
+  }
+  // ?source=pwa track kar sakte ho
+  if (params.get('source') === 'pwa') {
+    console.log('Launched as PWA');
+  }
+})();
 </script>
 </body>
 </html>
